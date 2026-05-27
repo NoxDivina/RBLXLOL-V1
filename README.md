@@ -6,4 +6,4 @@ Games where this script works: War Tycoon (4639625707), The Eastern War 2.5 (167
 
 If you encounter any bugs add it in the issues tab and I'll try to fix it.
 
-(KEY IS: BackshotMasterTheGoat)
+(KEY IS: Tempus finitum est, sapienter utere)
