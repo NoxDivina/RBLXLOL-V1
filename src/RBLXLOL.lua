@@ -7,7 +7,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
         Name = "RBLXLOL V1.0",
         Icon = "code-xml", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
         LoadingTitle = "RBLXLOL V1.0",
-        LoadingSubtitle = "by BackshotMaster",
+        LoadingSubtitle = "by NoxDivina",
         Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
         DisableRayfieldPrompts = false,
