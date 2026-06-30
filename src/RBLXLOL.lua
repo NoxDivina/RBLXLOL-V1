@@ -15,8 +15,8 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
         ConfigurationSaving = {
            Enabled = true,
-           FolderName = "RBLXLOL Cfg", -- Create a custom folder for your hub/game
-           FileName = "RBLXLOL Hub"
+           FolderName = "RBLXLOL-Cfg", -- Create a custom folder for your hub/game
+           FileName = "RBLXLOL-Hub"
         },
 
         Discord = {
@@ -43,7 +43,11 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
      local Tab2 = Window:CreateTab("Advanced Scripts", "terminal") -- Title, Image
      local Tab3 = Window:CreateTab("Troll Scripts", "skull") -- Title, Image
      local Tab4 = Window:CreateTab("Keybinds", "keyboard") -- Title, Image
--- local RivalsTab = Window:CreateTab("Rivals", "placeimagehere") --
+     if game.PlaceId == 17625359962 then
+        local RivalsTab = Window:CreateTab("Rivals", "bow-arrow")
+     end
+     
+
      -- Sliders --
 
      local Slider = Tab:CreateSlider({
@@ -67,7 +71,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
         CurrentValue = 50,
         Flag = "JumpSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
         Callback = function(V)
-            game.Players.LocalPlayer.Character.Humanoid.Jumppower = V-- The function that takes place when the slider changes
+            game.Players.LocalPlayer.Character.Humanoid.Jumppower = V -- The function that takes place when the slider changes
         -- The variable (Value) is a number which correlates to the value the slider is currently at
         end,
      })
@@ -86,7 +90,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
      -- Toggles --
 
-      local Toggle = Tab2:CreateToggle({
+      local EspToggle = Tab2:CreateToggle({
          Name = "ESP Toggle (Wallhack)",
          CurrentValue = false,
          Flag = "ESPToggle", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
@@ -120,6 +124,42 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
             
          end,
       })
+
+      local RivalsEspToggle = RivalsTab:CreateToggle({
+         Name = "ESP Toggle (Wallhack)",
+         CurrentValue = false,
+         Flag = "ESPToggle", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+         Callback = function (Value)
+            
+            if Value == true then
+               local Players = game:GetService("Players"):GetChildren()
+            local highlight = Instance.new("Highlight")
+            highlight.Name = "Highlight"
+          
+      
+            for i, v in pairs(Players) do
+               repeat task.wait() until v.Character
+               local highlightClone = highlight:Clone()
+               highlightClone.Adornee = v.Character
+               highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+            end
+      
+      
+            game.Players.PlayerAdded:Connect(function(player)
+               repeat task.wait() until player.Character
+               local highlightClone = highlight:Clone()
+               highlightClone.Adornee = player.Character
+               highlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
+            end)
+         else
+            highlight:Destroy()
+            highlightClone:Destroy()
+      
+            end
+            
+         end,
+      })
+
 
       -- Buttons --
    
