@@ -125,6 +125,9 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
          end,
       })
 
+
+    -- Rivals --
+
       local RivalsEspToggle = RivalsTab:CreateToggle({
          Name = "ESP Toggle (Wallhack)",
          CurrentValue = false,
@@ -160,6 +163,14 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
          end,
       })
 
+      local RivalsAimToggle = RivalsTab:CreateToggle({
+         Name = "Aim Toggle",
+         CurrentValue = false,
+         Flag = "AimToggle", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+         Callback = function (Value)
+            -- PLACEHOLDER, WILL CHANGE SOON --
+
+      local RivalsSkinchanger -- PLACEHOLDER // I don't know how to make a skinchanger yet. 
 
       -- Buttons --
    
