@@ -168,8 +168,8 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
          CurrentValue = false,
          Flag = "AimToggle", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
          Callback = function (Value)
-            -- PLACEHOLDER, WILL CHANGE SOON --
-
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/NoxDivina/RBLXLOL-V1/refs/heads/main/Loadstrings/Aimbot.lua"))()
+            -- THIS IS NOT FINAL ^^^ --
       local RivalsSkinchanger -- PLACEHOLDER // I don't know how to make a skinchanger yet. 
 
       -- Buttons --
